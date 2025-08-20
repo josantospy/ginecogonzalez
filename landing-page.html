@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Ginecología y Obstetricia - Cuidando tu salud femenina</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8e44ad',
+                        secondary: '#f5eef8',
+                        accent: '#e67e22',
+                        dark: '#2c3e50',
+                        light: '#f9f9f9'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background: linear-gradient(rgba(142, 68, 173, 0.85), rgba(142, 68, 173, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23f5eef8" width="100" height="100"/><path fill="%238e44ad" fill-opacity="0.2" d="M0 0h100v100H0z"/></svg>');
+            background-size: cover;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .appointment-form {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .doctor-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-light">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white mr-3">
+                        <i class="fas fa-venus text-xl"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold text-primary">Ginecología con la Dra. González</h1>
+                </div>
+                
+                <nav class="hidden md:flex space-x-10">
+                    <a href="#inicio" class="font-medium hover:text-primary transition">Inicio</a>
+                    <a href="#servicios" class="font-medium hover:text-primary transition">Servicios</a>
+                    <a href="#equipo" class="font-medium hover:text-primary transition">Equipo</a>
+                    <a href="#testimonios" class="font-medium hover:text-primary transition">Testimonios</a>
+                    <a href="#contacto" class="font-medium hover:text-primary transition">Contacto</a>
+                </nav>
+                
+                <div class="hidden md:block">
+                    <a href="#cita" class="bg-primary hover:bg-purple-700 text-white font-medium px-5 py-2 rounded-full transition">Pedir Cita</a>
+                </div>
+                
+                <button class="md:hidden text-primary">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-pattern pt-32 pb-20 text-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Cuidamos de ti en cada etapa de tu vida</h2>
+                <p class="text-xl mb-8">Medicina especializada en ginecología y obstetricia con enfoque humano y profesional.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#cita" class="bg-white text-primary hover:bg-gray-100 font-medium px-6 py-3 rounded-full text-center transition">Solicitar Consulta</a>
+                    <a href="#servicios" class="border-2 border-white hover:bg-white hover:text-primary font-medium px-6 py-3 rounded-full text-center transition">Nuestros Servicios</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-80 h-80 bg-white rounded-full flex items-center justify-center">
+                    <div class="absolute inset-0 bg-primary opacity-10 rounded-full animate-pulse"></div>
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><circle fill='%23f5eef8' cx='100' cy='100' r='100'/><path fill='%238e44ad' d='M130,70v60H70V70H130z M140,140h20V60h-20V140z M40,140h20V60H40V140z'/></svg>" alt="Ginecología" class="w-64 h-64 rounded-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Nuestros Servicios</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Ofrecemos una amplia gama de servicios especializados para el cuidado de la salud femenina en todas las etapas de la vida.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card bg-secondary rounded-2xl p-8 transition duration-300">
+                    <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-baby text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Control Prenatal</h3>
+                    <p class="text-gray-600 mb-4">Seguimiento personalizado durante el embarazo para garantizar tu bienestar y el de tu bebé.</p>
+                    <a href="#" class="text-primary font-medium flex items-center">Saber más <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <div class="service-card bg-secondary rounded-2xl p-8 transition duration-300">
+                    <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-procedures text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Ecografías 4D</h3>
+                    <p class="text-gray-600 mb-4">Tecnología de última generación para ver a tu bebé con increíble detalle antes de nacer.</p>
+                    <a href="#" class="text-primary font-medium flex items-center">Saber más <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <div class="service-card bg-secondary rounded-2xl p-8 transition duration-300">
+                    <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-female text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Ginecología General</h3>
+                    <p class="text-gray-600 mb-4">Revisiones periódicas, prevención y tratamiento de enfermedades del aparato reproductor femenino.</p>
+                    <a href="#" class="text-primary font-medium flex items-center">Saber más <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <div class="service-card bg-secondary rounded-2xl p-8 transition duration-300">
+                    <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-venus-double text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Fertilidad</h3>
+                    <p class="text-gray-600 mb-4">Estudios y tratamientos especializados para ayudar a cumplir el sueño de ser madre.</p>
+                    <a href="#" class="text-primary font-medium flex items-center">Saber más <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <div class="service-card bg-secondary rounded-2xl p-8 transition duration-300">
+                    <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-user-md text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Menopausia</h3>
+                    <p class="text-gray-600 mb-4">Atención especializada para esta etapa con tratamientos que mejoran tu calidad de vida.</p>
+                    <a href="#" class="text-primary font-medium flex items-center">Saber más <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <div class="service-card bg-secondary rounded-2xl p-8 transition duration-300">
+                    <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-laptop-medical text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Cirugía Ginecológica</h3>
+                    <p class="text-gray-600 mb-4">Procedimientos mínimamente invasivos para diferentes afecciones ginecológicas.</p>
+                    <a href="#" class="text-primary font-medium flex items-center">Saber más <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="equipo" class="py-20 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Nuestro Equipo</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Profesionales altamente cualificados y comprometidos con tu salud y bienestar.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="doctor-card bg-white rounded-2xl overflow-hidden transition duration-300">
+                    <div class="h-64 bg-primary overflow-hidden">
+                        <img src="./assets/dra-gonzalez.jpg" alt="Dra. María López" class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-dark">Dra. Mariely Gonzalez</h3>
+                        <p class="text-primary mb-2">Ginecóloga Obstetra</p>
+                        <p class="text-gray-600 text-sm">Especialista en embarazos de alto riesgo con más de 15 años de experiencia.</p>
+                    </div>
+                </div>
+                
+                <div class="doctor-card bg-white rounded-2xl overflow-hidden transition duration-300">
+                    <div class="h-64 bg-primary overflow-hidden">
+                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'><rect width='300' height='300' fill='%23f5eef8'/><circle cx='150' cy='120' r='70' fill='%238e44ad'/><rect x='80' y='200' width='140' height='80' fill='%238e44ad'/></svg>" alt="Dra. Elena Torres" class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-dark">Dra. Elena Torres</h3>
+                        <p class="text-primary mb-2">Especialista en Fertilidad</p>
+                        <p class="text-gray-600 text-sm">Pionera en técnicas de reproducción asistida con altas tasas de éxito.</p>
+                    </div>
+                </div>
+                
+                <div class="doctor-card bg-white rounded-2xl overflow-hidden transition duration-300">
+                    <div class="h-64 bg-primary overflow-hidden">
+                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'><rect width='300' height='300' fill='%23f5eef8'/><circle cx='150' cy='120' r='70' fill='%238e44ad'/><rect x='80' y='200' width='140' height='80' fill='%238e44ad'/></svg>" alt="Dr. Carlos Méndez" class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-dark">Dr. Carlos Méndez</h3>
+                        <p class="text-primary mb-2">Oncólogo Ginecológico</p>
+                        <p class="text-gray-600 text-sm">Especialista en detección temprana y tratamiento de cáncer ginecológico.</p>
+                    </div>
+                </div>
+                
+                <div class="doctor-card bg-white rounded-2xl overflow-hidden transition duration-300">
+                    <div class="h-64 bg-primary overflow-hidden">
+                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'><rect width='300' height='300' fill='%23f5eef8'/><circle cx='150' cy='120' r='70' fill='%238e44ad'/><rect x='80' y='200' width='140' height='80' fill='%238e44ad'/></svg>" alt="Dra. Sofía Ramírez" class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-dark">Dra. Sofía Ramírez</h3>
+                        <p class="text-primary mb-2">Ecografista Senior</p>
+                        <p class="text-gray-600 text-sm">Experta en diagnóstico prenatal y ecografía 4D con más de 12 años de experiencia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Testimonios de Nuestras Pacientes</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">La confianza que depositan en nosotros nuestras pacientes es nuestro mayor orgullo.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-secondary rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white mr-4">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-dark">Laura M.</h3>
+                            <div class="flex text-accent">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"El seguimiento de mi embarazo fue excelente. Me sentí acompañada en todo momento y el parto fue una experiencia maravillosa gracias a su equipo."</p>
+                </div>
+                
+                <div class="testimonial-card bg-secondary rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white mr-4">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-dark">Carmen R.</h3>
+                            <div class="flex text-accent">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Llevaba años intentando quedarme embarazada y gracias a la Dra. Torres hoy tengo a mi bebé en brazos. Profesionales increíbles y trato excepcional."</p>
+                </div>
+                
+                <div class="testimonial-card bg-secondary rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white mr-4">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-dark">Marta J.</h3>
+                            <div class="flex text-accent">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"La ecografía 4D fue una experiencia increíble. Poder ver la carita de mi bebé con tanto detalle antes de nacer no tiene precio. Muy profesionales."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="cita" class="py-20 bg-primary">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto appointment-form bg-white rounded-2xl p-8 md:p-12">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Solicita una Cita</h2>
+                    <p class="text-xl text-gray-600">Completa el formulario y nos pondremos en contacto contigo para confirmar tu cita.</p>
+                </div>
+                
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Nombre completo</label>
+                        <input type="text" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 mb-2">Teléfono</label>
+                        <input type="tel" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 mb-2">Correo electrónico</label>
+                        <input type="email" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 mb-2">Servicio de interés</label>
+                        <select class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option>Control prenatal</option>
+                            <option>Ecografía 4D</option>
+                            <option>Ginecología general</option>
+                            <option>Fertilidad</option>
+                            <option>Menopausia</option>
+                            <option>Cirugía ginecológica</option>
+                        </select>
+                    </div>
+                    
+                    <div class="md:col-span-2">
+                        <label class="block text-gray-700 mb-2">Mensaje adicional</label>
+                        <textarea rows="4" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                    </div>
+                    
+                    <div class="md:col-span-2">
+                        <button type="submit" class="w-full bg-primary hover:bg-purple-700 text-white font-medium py-3 px-6 rounded-lg transition">Solicitar Cita</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white mr-3">
+                            <i class="fas fa-venus"></i>
+                        </div>
+                        <h2 class="text-xl font-bold">GineMater</h2>
+                    </div>
+                    <p class="text-gray-400 mb-6">Centro especializado en ginecología y obstetricia, ofreciendo la más alta calidad en servicios médicos para la mujer.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-primary flex items-center justify-center transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-primary flex items-center justify-center transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-primary flex items-center justify-center transition"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Enlaces Rápidos</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#inicio" class="text-gray-400 hover:text-white transition">Inicio</a></li>
+                        <li><a href="#servicios" class="text-gray-400 hover:text-white transition">Servicios</a></li>
+                        <li><a href="#equipo" class="text-gray-400 hover:text-white transition">Nuestro Equipo</a></li>
+                        <li><a href="#testimonios" class="text-gray-400 hover:text-white transition">Testimonios</a></li>
+                        <li><a href="#cita" class="text-gray-400 hover:text-white transition">Solicitar Cita</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Servicios</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Control Prenatal</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Ecografías 4D</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Ginecología General</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Tratamientos de Fertilidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cirugía Ginecológica</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contacto</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-400">Av. de la Medicina 123, Ciudad Salud</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-400">+34 912 345 678</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-400">info@ginemater.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-400">Lun-Vie: 8:00-20:00<br>Sáb: 9:00-14:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2023 GineMater - Centro de Ginecología y Obstetricia. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Simple animation on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.service-card, .doctor-card, .testimonial-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
